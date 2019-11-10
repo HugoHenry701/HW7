@@ -85,9 +85,10 @@ app.get("/ask", (req, res) => {
     res.render("askPage")
 })
 app.use(express.static("public"))
-app.listen(5000, (err) => {
+app.use(express.static("public"))
+app.listen((701), (err) => {
     if (err) { console.log(err) } else {
-        console.log("App listen at 5000")
+        console.log("App listen at 701")
     }
 })
 //get la gui du lieu, post la nhan du lieu
