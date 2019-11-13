@@ -26,7 +26,9 @@ app.get("/", (req, res) => {
     
         })
     } catch (error) {
-        res.render("mainpage")
+        res.render("mainpage",{
+            questionmiss : "Please submit question :>"
+        })
     }
 
 

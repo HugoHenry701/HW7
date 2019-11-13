@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
@@ -7,9 +8,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="/libs/css/bootstrap.min.css">
 </head>
+
 <body>
-    <h1>QUESTION PAGE</h1>
-    {{!-- <h1>ha ke oc </h1> --}}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:701">Question Page</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:701/ask">Submit Question</a>
+        </li>
+    </ul>
+    {{!-- <button><a href="http://localhost:701/ask">Submit Question</a></button> --}}
+    {{!-- <button><a href="http://localhost:701">Main Page</a></button> --}}
+
     {{{body}}}
 </body>
+
 </html>

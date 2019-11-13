@@ -1,4 +1,10 @@
-<h1>Today Question</h1>
-    
-<h2 style="color: red;">{{questionup}}</h2>
-<button type="button" class="btn btn-success" ><a href="http://localhost:5000/ask">Submit Question</a></button>
+{{!-- <h1>Today Question</h1> --}}
+<div class="container">
+    <h1 style="text-align: center; margin-top: 2em">{{questionup}}</h1>
+    <h1 style="text-align: center; margin-top: 2em">{{questionmiss}}</h1>
+</div>
+<div class="d-flex justify-content-around">
+    <button type="button" class="btn btn-primary">YES</button>
+    <button type="button" class="btn btn-danger">NO</button>
+</div>
+{{!-- <button type="button" class="btn btn-success" ><a href="http://localhost:5000/ask">Submit Question</a></button> --}}
