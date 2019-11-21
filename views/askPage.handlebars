@@ -2,10 +2,20 @@
     <div>
         <form action="/ask" method="post">
             <label for="exampleFormControlTextarea1">Let's askkk!!!</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" type="text" name="text" required></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" type="text" name="question"
+                required></textarea>
+            <span>Remain <span id="character"></span>/200 symbols</span>
             <br>
+
             <button type="submit" class="btn btn-outline-primary">SENT</button><br><br>
             {{!-- <button><a href="http://localhost:5000">Main Page</a></button> --}}
         </form>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#exampleFormControlTextarea1").keyup(function () {
+            $("#character").html(200-$("#exampleFormControlTextarea1").val().length)
+        })
+    });
+</script>
