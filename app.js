@@ -5,19 +5,19 @@ const bodyParser = require("body-parser")
 const homeRouter = require("./routers/homeRouter")
 const askRouter = require("./routers/askRouter")
 const mongoose = require("mongoose")
+const yesno = require("./routers/yesno")
 
 let app = express()
 
 mongoose.connect("mongodb://localhost/csdl", { useNewUrlParser: true }, (err) => {
-
     if (err) { console.log(err) } else
-        console.log("database connected")
+    console.log("database connected")
 })
-
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use("/", homeRouter)
 app.use("/", askRouter.router)
+app.use("/", yesno)
 let option = {
     defaultLayout: "main"
 }

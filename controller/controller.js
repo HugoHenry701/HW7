@@ -1,4 +1,6 @@
 const question = require("../models/dataSchema")
+const mongoose = require("mongoose")
+
 
 
 
@@ -16,26 +18,24 @@ const createData = (userQuestion) => {
     question.create(newQuestion)
 }
 
-let dataR = []
-var readData = (callback) => {
-    question.find({}, (err, data) => {
-        if (err) {
-            callback({
-                questionContent:"loi khong tim thay"
-            })
-        } else {
-            callback(data)
-        }
-    })
-}
-let updateData = () => {
-    
-}
-let deleteData = () => {
+async function asyncreadData() {
+    let data = await question.find({});
+    return data
 
+}
+async function updateData(id, answer) {
+    await question.findOneAndUpdate(
+        { _id: id },
+        { $push: { questionAnswer: answer } },
+    )
+}
+async function deleteData(id){
+    await question.findOneAndDelete({_id:id})
 }
 
 module.exports = {
     createData,
-    readData
+    asyncreadData,
+    updateByID: updateData,
+    deleteData
 }
